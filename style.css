@@ -680,5 +680,11 @@ header{
   .carousel-item .carousel-item-text{
     font-size: x-small;
   }
+  .navigation-auto div{
+    display: none;
+  }
+  .manual-btn{
+    display: none;
+  }
 
 }
