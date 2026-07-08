@@ -30,7 +30,9 @@ Dark theme: bg #000, paper text #f3f6f7, muted #d1cbc7, orange accent #e8873b. F
 ## Progress
 - ✅ Lesson 1: scaffold, router, dark theme, image pipeline, and the **Intro split-screen** (`src/pages/Intro.tsx` + `Intro.css`): two vertical halves (Arquitectura/Interiorismo), each a dimmed image that on hover fades in to full color + zooms (grow) while its half widens to 60% (flex-basis:0 + grow ratio; the grow rule is `.intro:hover .intro-half:hover` to out-specify the shrink rule), "Entrar →" cue in accent. Stacks vertically under 640px.
 - ✅ Lesson 2: full `/sitio` page. Content in `src/data/site.ts` (verbatim). Components: SiteNav (fixed, mobile drawer), Slider (hero, cross-fade images 5s + rotating word 3s via AnimatePresence; `initialWord` seeded from ?focus), Nosotros (whileInView fade — note: only fires on real scroll, looks empty in a static fullPage shot), Proyectos (fade carousel, prev/next + dots, captions verbatim), Contacto (same fields, submit → mailto), SiteFooter. Styles in `src/pages/Site.css`.
-- ⏳ Next (Lesson 3): GitHub Actions deploy → replace the live github.io/Deymar/ with the React build. NOT pushed yet — remote still serves the old HTML so the live demo stays intact until Actions is wired.
+- ✅ Lesson 3: **LIVE at https://lucasle6.github.io/Deymar/** (React build). `.github/workflows/deploy.yml` builds with Vite and publishes `dist/` on every push to master; Pages source switched from legacy master-root to `build_type: workflow`. index.html polished (es, Deymar title/description, logo favicon). Original HTML site replaced but preserved in git history. Portfolio card URL unchanged.
+
+**PROJECT COMPLETE (2026-07-06).** To ship changes: push to master → Actions rebuilds & redeploys automatically.
 
 ## Preview
 Root `.claude/launch.json` config `deymar` (vite on port 5180). App is at http://localhost:5180/Deymar/ (base prefix). Preview screenshot tool can hang on image-heavy loads — verify with puppeteer against localhost:5180/Deymar/ instead.
