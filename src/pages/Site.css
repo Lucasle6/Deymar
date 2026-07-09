@@ -2,6 +2,12 @@
   position: relative;
 }
 
+/* fixed navbar is 4.5rem tall — keep section tops from hiding under it
+   when the nav scrolls to them */
+.site section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
 /* shared section heading — the original's wide-tracked light title */
 .heading {
   font-family: var(--font-display);
@@ -33,13 +39,20 @@
   display: flex;
   gap: 2.5rem;
 }
-.site-nav__links a {
+/* nav items are <button>s (they scroll, they don't navigate) — reset
+   them to look like the original text links */
+.site-nav__links button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   color: var(--paper);
   transition: color 0.3s ease;
 }
-.site-nav__links a:hover {
+.site-nav__links button:hover {
   color: var(--accent);
 }
 .site-nav__toggle {
@@ -68,8 +81,19 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
 }
-.site-nav__drawer a {
+.site-nav__drawer button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1rem;
   color: var(--paper);
+  transition: color 0.3s ease;
+}
+.site-nav__drawer button:hover {
+  color: var(--accent);
 }
 @media (max-width: 720px) {
   .site-nav__links {
